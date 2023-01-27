@@ -218,9 +218,9 @@ if ((flavor === "vanilla" || flavor === "chocolate") && (vessel === "cone" || ve
 
 
 // change the values of `shirtWidth`, `shirtLength`, and `shirtSleeve` to test your code
-var shirtWidth = 23;
-var shirtLength = 30;
-var shirtSleeve = 8.71;
+var shirtWidth = 19.99;
+var shirtLength = 28.99;
+var shirtSleeve = 8.379;
 
 /*
  * To gain confidence, check your code for the following combination of [shirtWidth, shirtLength, shirtSleeve, expectedSize]:
@@ -235,4 +235,116 @@ var shirtSleeve = 8.71;
  * [18, 29, 8.47, 'NA']
 */
 
+var smallSize =   [18, 28, 8.13];
+var mediumSize =  [20 , 29, 8.38];
+var LargeSize =   [22, 30, 8.63];
+var xlSize =      [24, 31, 8.88];
+var twoXlSize =   [26, 33, 9.63];
+var threeXlSize = [28, 34, 10.13];
+
 // WRITE YOUR CODE HERE
+var size = "NA";
+
+if ((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength >= 28 && shirtLength < 29) && (shirtSleeve >= 8.13 && shirtSleeve < 8.38)){
+  size = "S"
+} else if ((shirtWidth >= 20  && shirtWidth < 22) && (shirtLength >= 29 && shirtLength < 30) && (shirtSleeve >= 8.38 && shirtSleeve < 8.88)){
+  size = "M"
+} else if ((shirtWidth >= 22  && shirtWidth < 24) && (shirtLength >= 30 && shirtLength < 31) && (shirtSleeve >= 8.88 && shirtSleeve < 9.63)){
+  size = "L"
+} else if ((shirtWidth >= 26  && shirtWidth < 28) && (shirtLength >= 31 && shirtLength < 33) && (shirtSleeve >= 9.63 && shirtSleeve < 10.13)){
+  size = "2XL"
+} else if ((shirtWidth === 28) && (shirtLength === 34) && (shirtSleeve ===10.13)){
+  size = "3XL"
+} else {
+  size = "NA";
+}
+console.log(size);
+
+/*
+ * Programming Quiz - Navigating the Food Chain (3-8)
+ *
+ * Use a series of ternary operator to set the category to one of the following:
+ *   - "herbivore" if an animal eats plants
+ *   - "carnivore" if an animal eats animals
+ *   - "omnivore" if an animal eats plants and animals
+ *   - undefined if an animal doesn't eat plants or animals
+ *
+ * Notes
+ *   - use the variables `eatsPlants` and `eatsAnimals` in your ternary expressions
+ *   - `if` statements aren't allowed ;-)
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have the variables `eatsPlants`, `eatsAnimals`
+ * - Your code should include ternary statements. Do not use if....else statement. 
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
+// change the values of `eatsPlants` and `eatsAnimals` to test your code
+var eatsPlants = false;
+var eatsAnimals = true;
+
+/*
+ * Test your code agaist the followig possible input/output combinations of (`eatsPlants`, `eatsAnimals`, expected output):
+ * - (true, true, omnivore)
+ * - (false, true, carnivore)
+ * - (true, false, herbivore)
+ * - (false, false, undefined)
+ */
+
+var category = ( eatsPlants ? (eatsAnimals ? "omivore":"herbivore") : (eatsAnimals ? "carnivore":"undefined"))
+
+console.log(category);
+
+/*
+ * Programming Quiz: Back to School (3-9)
+ *
+ * Write a switch statement to set the average salary of a person based on their type of completed education.
+ *
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have the variables `education`, and `salary`
+ * - Your code should include a switch statement
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
+// change the value of `education` to test your code
+var education = 'no high school diploma';
+
+// set the value of this based on a person's education
+var salary = 0;
+
+// your code goes here
+switch (education) {
+  case "no high school diploma":
+    var salary = 25636;
+    break;
+  case "a high school diploma":
+    var salary = 35256;
+    break;
+  case "an Associate's degree":
+    var salary = 41496;
+    break;
+  case "a Bachelor's degree":
+    var salary = 59124;
+    break;
+  case "a Master's degree":
+    var salary = 69732;
+    break;
+  case "a Professional degree":
+    var salary = 89960;
+    break;
+  case "a Doctoral degree":
+    var salary = 84396;
+    break;
+  default:
+    console.log("What do degree do they have again?")
+    break;
+}
